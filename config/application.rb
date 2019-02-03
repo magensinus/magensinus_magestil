@@ -16,6 +16,9 @@ module MagensinusEducation
     # I shrunk the internet
     config.middleware.use Rack::Deflater
 
+    # Set the default locale
+    config.i18n.default_locale = :pt
+
     # Timezone configuration
     config.time_zone = "Lisbon"
     config.active_record.default_timezone = :local

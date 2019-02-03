@@ -15,5 +15,6 @@
   %body
     = render partial: "lib/global/header"
     = render partial: "lib/components/responsive_navigation"
-    = render partial: "lib/global/billboard"
+    .universal.hero
+      = yield
     = render partial: "lib/global/footer"

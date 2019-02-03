@@ -5,4 +5,9 @@ module ApplicationHelper
   def application_configuration
     Rails.configuration.application_configuration
   end
+
+  # Vcard
+  def vcard
+    @vcard ||= Contact.first!
+  end
 end

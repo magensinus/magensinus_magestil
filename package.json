@@ -1,5 +1,10 @@
 {
   "name": "magensinus_magestil",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "altai_center": "^0.0.3",
+    "altai_panel": "^1.0.4",
+    "altai_toggle": "^1.0.20",
+    "jquery": "^3"
+  }
 }

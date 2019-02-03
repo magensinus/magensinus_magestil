@@ -3,9 +3,15 @@
 .vcard.right
   .vcard-box
     .vcard-item
-      %p.small Address line one
-      %p.small Address line two
-      %p.small Postcode | City
-      %p.small Country
-      %p.small Email
-      %p.small Telephone
+      - if vcard.address_one.presence
+        %p.small= vcard.address_one
+      - if vcard.address_two.presence
+        %p.small= vcard.address_two
+      - if vcard.postcode.presence && vcard.city.presence
+        %p.small #{vcard.postcode} | #{vcard.city}
+      - if vcard.country.presence
+        %p.small= vcard.country
+      - if vcard.email.presence
+        %p.small= vcard.email
+      - if vcard.phone.presence
+        %p.small= vcard.phone

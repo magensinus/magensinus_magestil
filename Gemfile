@@ -27,18 +27,27 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Load Mies Magensinus
-# gem "mies", "0.0.1.alpha", github: "magensinus/mies_magensinus"
-gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus"
+gem "mies", "0.0.1.alpha", github: "magensinus/mies_magensinus"
+# gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus"
 
 # Haml-rails provides Haml generators for Rails.
 gem "haml-rails", "~> 1.0"
+
+# Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem "figaro", "~> 1.1"
+
+# The Ruby cloud services library
+gem "fog", "~> 1.42"
+
+# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+gem "carrierwave", "~> 1.2"
+
+# Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
+gem "mini_magick", "~> 4.8"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
