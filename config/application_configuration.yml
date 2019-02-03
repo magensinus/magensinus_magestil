@@ -1,0 +1,19 @@
+# Application configuration
+
+default: &default
+  title: "Magensinus Education"
+  description: "Nullam id dolor id nibh ultricies vehicula ut id elit."
+  url: "https://www.domain.com/"
+  twitter_username: "@username"
+
+development:
+  <<: *default
+  environment: "development"
+
+test:
+  <<: *default
+  environment: "test"
+
+production:
+  <<: *default
+  environment: "production"

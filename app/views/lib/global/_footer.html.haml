@@ -1,0 +1,25 @@
+/* Footer */
+
+%footer.universal.footer
+  .separator.large
+  .universal-box
+    .universal-item
+      .footer-left
+        = render partial: "lib/components/secondary_navigation"
+      .footer-right
+        = render partial: "lib/components/social_navigation"
+        .separator.extra-small
+        = render partial: "lib/components/brand_footer"
+        .separator.extra-small
+        = render partial: "lib/components/vcard"
+        .separator.extra-small
+        = render partial: "lib/components/group_navigation"
+  .separator.large
+  .wide.left
+    .separator.extra-small
+    = render partial: "lib/components/sponsor_navigation"
+  .wide.left
+    = render partial: "lib/components/legal_navigation"
+  .wide.left
+    = render partial: "lib/components/copyright"
+    .separator.extra-small
