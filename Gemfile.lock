@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 8c9d839646f3ea6d9e873c45902f696b36a8c623
+PATH
+  remote: /Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)

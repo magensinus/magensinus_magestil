@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :students, only: [:index], controller: :students
   resources :parents, only: [:index], controller: :parents
   resources :tutors, only: [:index], controller: :tutors
+  resources :terms_and_conditions, only: [:index], controller: :terms_and_conditions
 end
