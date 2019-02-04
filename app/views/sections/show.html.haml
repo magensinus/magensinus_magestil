@@ -1,0 +1,25 @@
+/* Index */
+
+.container-top.left
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to courses_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("back")
+
+.container-middle.left
+
+  .content
+    .content-box
+      .content-item
+        - if @course.title.presence
+          %h1= @course.try(:title)
+  .section-content
+    .section-content-box
+      .section-content-item
+        .section-content-left
+          .section-content-inner#ajax-content
+
+.container-bottom.left

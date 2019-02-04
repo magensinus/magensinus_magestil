@@ -21,4 +21,19 @@
           .trix
             = safe_join([@object.try(:description).html_safe])
 
+  / Courses
+  .courses
+    .courses-box
+      - @categories.each do |category|
+        - category.courses.each do |course|
+          .courses-item
+            .courses-right
+              .figure{ style: "background-image: url(#{image_path "course_thumbnail.png"})" }
+            .courses-left
+              %h3= course.title
+              .separator.small
+              .trix.left
+                = safe_join([course.try(:description).html_safe])
+              = link_to "Ler Mais", course_path(course), class: "button large blue"
+
 .container-bottom.left

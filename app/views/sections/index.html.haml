@@ -1,0 +1,29 @@
+/* Index */
+
+.container-top.left
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to root_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("home")
+
+.container-middle.left
+
+  .content
+    .content-box
+      .content-item
+        - if @object.title.presence
+          %h1= @object.try(:title)
+        .separator.small
+        - if @object.description.presence
+          .trix
+            = safe_join([@object.try(:description).html_safe])
+
+  - @categories.each do |category|
+    = category.title
+    - category.courses.each do |course|
+      = link_to "Course", course_path(course)
+
+.container-bottom.left

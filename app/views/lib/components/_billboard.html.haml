@@ -4,6 +4,6 @@
   .billboard-box
     .billboard-item
       .separator.medium
-      %h1= @object.title
-      .trix
+      %h1.white-100-cl= @object.title
+      .trix.white-100-cl
         = safe_join([@object.description.html_safe])

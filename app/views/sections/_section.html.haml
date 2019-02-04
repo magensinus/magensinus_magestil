@@ -1,0 +1,4 @@
+%h3= @course_section.title
+.trix
+  - @course_section.section_assets.each do |asset|
+    = safe_join([asset.text_box.html_safe])
