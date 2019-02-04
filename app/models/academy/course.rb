@@ -25,9 +25,8 @@ module Academy
     # Academy enrollments
     has_many :enrollments, through: :enrollment_courses
 
-
     # Uploaders
-    # mount_uploader :document_box_magestil, Magestil::AssetUploader
+    mount_uploader :image_box_magestil, Academy::AssetUploader
     mount_uploader :document_box_magestil, Academy::DocumentUploader
   end
 end
