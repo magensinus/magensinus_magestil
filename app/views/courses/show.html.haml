@@ -38,5 +38,8 @@
               - if @course.document_box_magestil.presence
                 .section-navigation-item
                   = link_to "Descarregar PDF", @course.document_box_magestil_url.to_s, target: :blank, class: "button large blue"
+              - if @course.video_box.presence
+                .section-navigation-item
+                  = link_to "Ver Vídeo", "https://www.youtube.com/embed/#{@course.video_box}", "data-featherlight" => "iframe", "data-featherlight-iframe-allowfullscreen" => "true", "data-featherlight-iframe-frameborder" => "0", "data-featherlight-iframe-height" => "540", "data-featherlight-iframe-width" => "960", class: "button large blue"
 
 .container-bottom.left
