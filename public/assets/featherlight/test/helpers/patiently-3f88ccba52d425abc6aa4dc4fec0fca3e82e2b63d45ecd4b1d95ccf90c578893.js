@@ -1,1 +1,0 @@
-this.chai||(chai=require("chai"));var patiently=function(i,t,e){var o=this,n="function"==typeof t?[t]:t,r=n.shift(),a=200,c=(e||1e3)/a,h=function(){try{r.call(o)}catch(t){if(t instanceof chai.AssertionError&&0<=--c)return void setTimeout(h,a);throw t}(r=n.shift())?h():i()};h()};"object"==typeof exports?module.exports=patiently:this.patiently=patiently;

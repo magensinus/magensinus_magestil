@@ -11,6 +11,7 @@ module ApplicationHelper
     @vcard ||= Contact.first!
   end
 
+  # Networks
   def networks
     @networks ||= Network.all
   end
