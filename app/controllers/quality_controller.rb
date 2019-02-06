@@ -6,6 +6,7 @@ class QualityController < ApplicationController
 
   # /quality
   def index
+    @wallet_categories  ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 
   private
