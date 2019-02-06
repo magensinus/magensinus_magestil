@@ -22,16 +22,16 @@
       .section-content-item
         .section-content-left
           .section-content-inner#ajax-content
-            %h3= @course_section.title
-            - @section_assets.each do |asset|
+            %h3= @section.title
+            - @assets.each do |asset|
               .trix
                 = safe_join([asset.text_box.html_safe])
         .section-content-right
           .section-navigation
             .section-navigation-box
-              - @course_sections.each do |course_section|
+              - @sections.each do |section|
                 .section-navigation-item
-                  = link_to course_section.title, course_section_path(@course, course_section), remote: true, class: "button large blue"
+                  = link_to section.title, course_section_path(@course, section), remote: true, class: "button large blue"
               - if @course.image_box_magestil.presence
                 .section-navigation-item
                   = link_to "Componentes de Formação", @course.image_box_magestil_url.to_s, target: :blank, "data-featherlight" => "image", class: "button large blue gallery"

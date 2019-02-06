@@ -12,9 +12,9 @@ class CoursesController < ApplicationController
 
   # /courses/slug
   def show
-    @course_section = @course.sections.first!
-    @section_assets = @course_section.section_assets.all
-    @course_sections = @course.sections.all
+    @sections = @course.sections.all
+    @section = @course.sections.first!
+    @assets = @section.section_assets.all
     respond_to do |format|
       format.html
       format.js
