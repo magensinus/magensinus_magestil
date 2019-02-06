@@ -6,6 +6,7 @@ class PartnershipsController < ApplicationController
 
   # /partnerships
   def index
+    @partnerships = Partnerships::Identity.where(published: true, magestil: true)
   end
 
   private

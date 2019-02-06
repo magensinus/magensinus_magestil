@@ -21,4 +21,22 @@
           .trix
             = safe_join([@object.try(:description).html_safe])
 
+  / Partnerships
+  .partnerships
+    .partnerships-box
+      - @partnerships.each do |partnership|
+        .partnerships-item
+          - if partnership.url.presence
+            = link_to partnership.url do
+              - if partnership.thumb_box.presence
+                = image_tag partnership.thumb_box_url.to_s
+              - else
+                = partnership.title
+          - else
+            .partnerships-inner
+              - if partnership.thumb_box.presence
+                = image_tag partnership.thumb_box_url.to_s
+              - else
+                %p= partnership.title
+
 .container-bottom.left
