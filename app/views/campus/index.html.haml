@@ -14,11 +14,44 @@
   .content
     .content-box
       .content-item
-        - if @object.title.presence
-          %h1= @object.try(:title)
+        - if @campus.title.presence
+          %h1= @campus.try(:title)
         .separator.small
-        - if @object.description.presence
+        - if @campus.description.presence
           .trix
-            = safe_join([@object.try(:description).html_safe])
+            = safe_join([@campus.try(:description).html_safe])
+
+  .separator.small
+
+  .partnerships
+    .partnerships-box
+      - @campus_assets.each do |asset|
+        .partnerships-item
+          .partnerships-inner
+            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
+              = image_tag(asset.image_box_url(:thumb))
+
+
+  .separator.small
+
+  .content
+    .content-box
+      .content-item
+        - if @equipment.title.presence
+          %h2= @equipment.try(:title)
+        .separator.small
+        - if @equipment.description.presence
+          .trix
+            = safe_join([@equipment.try(:description).html_safe])
+
+  .separator.small
+
+  .partnerships
+    .partnerships-box
+      - @equipment_assets.each do |asset|
+        .partnerships-item
+          .partnerships-inner
+            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
+              = image_tag(asset.image_box_url(:thumb))
 
 .container-bottom.left

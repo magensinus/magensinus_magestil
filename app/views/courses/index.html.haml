@@ -30,7 +30,10 @@
             .courses-right
               .figure{ style: "background-image: url(#{image_path "course_thumbnail.png"})" }
             .courses-left
-              %h3= course.title
+              %h3.blue-500-cl
+                .icon.left
+                  = image_tag "icons/course.png"
+                = course.title
               .separator.small
               .trix.left
                 = safe_join([course.try(:description).html_safe])

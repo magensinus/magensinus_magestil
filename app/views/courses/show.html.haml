@@ -15,7 +15,10 @@
     .content-box
       .content-item
         - if @course.title.presence
-          %h1= @course.try(:title)
+          %h1.blue-500-cl
+            .icon.left
+              = image_tag "icons/course.png"
+            = @course.try(:title)
 
   .section-content
     .section-content-box

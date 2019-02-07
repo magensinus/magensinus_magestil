@@ -2,15 +2,22 @@
 
 class CampusController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :campus, only: [:index]
+  before_action :equipment, only: [:index]
 
   # /campus
   def index
+    @campus_assets ||= CampusAsset.all
+    @equipment_assets ||= EquipmentAsset.all
   end
 
   private
 
-  def object
-    @object = Campus.first!
+  def campus
+    @campus = Campus.first!
+  end
+
+  def equipment
+    @equipment = Equipment.first!
   end
 end

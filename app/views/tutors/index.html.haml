@@ -21,4 +21,18 @@
           .trix
             = safe_join([@object.try(:description).html_safe])
 
+  .separator.small
+
+  .partnerships
+    .partnerships-box
+      - @wallet_categories.each do |wallet_category|
+        - wallet_category.assets.each do |asset|
+          .partnerships-item
+            .partnerships-inner
+              = link_to asset.document_box_url.to_s, target: :blank, class: "blue" do
+                - if asset.document_caption.presence
+                  = asset.document_caption
+                - else
+                  = t("document")
+
 .container-bottom.left

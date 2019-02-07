@@ -12,13 +12,31 @@
 .container-middle.left
 
   .content
-    .content-box
-      .content-item
+    .content-box.col-large-2-1
+      .content-item.col-large-2-1
         - if @object.title.presence
           %h1= @object.try(:title)
         .separator.small
         - if @object.description.presence
           .trix
             = safe_join([@object.try(:description).html_safe])
+      .content-item.col-large-2-1
+        - if @object.address_one.presence
+          %p.mg-0= @object.try(:address_one)
+        - if @object.address_two.presence
+          %p.mg-0= @object.try(:address_two)
+        - if @object.postcode.presence
+          %p.mg-0= @object.try(:postcode)
+        - if @object.city.presence
+          %p.mg-0= @object.try(:city)
+        - if @object.country.presence
+          %p.mg-0= @object.try(:country)
+        .separator.small
+        - if @object.fax.presence
+          %p.mg-0= @object.try(:fax)
+        - if @object.phone.presence
+          %p.mg-0= @object.try(:phone)
+        - if @object.email.presence
+          %p.mg-0= @object.try(:email)
 
 .container-bottom.left
