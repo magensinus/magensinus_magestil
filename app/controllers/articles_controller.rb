@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = Articles.first!
   end

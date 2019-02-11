@@ -11,6 +11,7 @@ class PartnershipsController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = Partnerships.first!
   end

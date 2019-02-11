@@ -10,6 +10,7 @@ class TermsAndConditionsController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = TermsAndConditions.first!
   end

@@ -23,14 +23,17 @@ class CoursesController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = Courses.first!
   end
 
+  # Course
   def course
     @course ||= Academy::Course.find_by(slug: params[:id])
   end
 
+  # Categories
   def categories
     @categories ||= Academy::Category.where(magestil: true, published: true)
   end

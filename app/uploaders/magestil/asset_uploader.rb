@@ -2,7 +2,6 @@
 
 module Magestil
   class AssetUploader < ApplicationUploader
-
     # Versions
     version :thumb
 

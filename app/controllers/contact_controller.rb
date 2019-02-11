@@ -10,6 +10,7 @@ class ContactController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = Contact.first!
   end

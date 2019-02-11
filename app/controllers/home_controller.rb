@@ -13,6 +13,7 @@ class HomeController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = Home.first!
   end

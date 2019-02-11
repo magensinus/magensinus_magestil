@@ -6,11 +6,12 @@ class ParentsController < ApplicationController
 
   # /parents
   def index
-    @wallet_categories  ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
+    @wallet_categories ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 
   private
 
+  # Object
   def object
     @object = Parents.first!
   end

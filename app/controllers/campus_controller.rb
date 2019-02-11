@@ -13,10 +13,12 @@ class CampusController < ApplicationController
 
   private
 
+  # Campus
   def campus
     @campus = Campus.first!
   end
 
+  # Equipment
   def equipment
     @equipment = Equipment.first!
   end

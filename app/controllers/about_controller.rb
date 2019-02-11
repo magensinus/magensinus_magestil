@@ -10,6 +10,7 @@ class AboutController < ApplicationController
 
   private
 
+  # Object
   def object
     @object = About.first!
   end

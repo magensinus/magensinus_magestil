@@ -23,15 +23,18 @@
 
   .separator.small
 
-  .partnerships
-    .partnerships-box
+  .wallets
+    .wallets-box
       - @wallet_categories.each do |wallet_category|
         - wallet_category.assets.each do |asset|
-          .partnerships-item
-            .partnerships-inner
-              = link_to asset.document_box_url.to_s, target: :blank, class: "blue" do
+          .wallets-item
+            .wallets-inner
+              = link_to asset.document_box_url.to_s, target: :blank do
+                .icon.left
+                  = image_tag "icons/underscore.png"
                 - if asset.document_caption.presence
                   = asset.document_caption
                 - else
                   = t("document")
+
 .container-bottom.left

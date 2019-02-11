@@ -12,9 +12,15 @@ Rails.application.routes.draw do
   end
   resources :articles, only: [:index], controller: :articles
   resources :contact, only: [:index], controller: :contact
-  resources :newsletter, only: [:index], controller: :newsletter
   resources :students, only: [:index], controller: :students
   resources :parents, only: [:index], controller: :parents
   resources :tutors, only: [:index], controller: :tutors
   resources :terms_and_conditions, only: [:index], controller: :terms_and_conditions
+
+  # Newsletter
+  resource :newsletter, only: [:show], controller: :newsletter do
+    member do
+      post :subscribe
+    end
+  end
 end
