@@ -1,0 +1,15 @@
+/ Wallets
+
+.wallets
+  .wallets-box
+    - @wallets.each do |wallet|
+      - wallet.assets.each do |asset|
+        .wallets-item
+          .wallets-inner
+            = link_to asset.document_box_url.to_s, target: :blank, class: "blue" do
+              .icon.left
+                = image_tag "icons/underscore.png"
+              - if asset.document_caption.presence
+                = asset.document_caption
+              - else
+                = t("document")

@@ -26,7 +26,7 @@
             .trix
               = safe_join([@object.try(:description).html_safe])
 
-- unless flash[:success]
-  = render "form", object: @subscription
+  - unless flash[:success]
+    = render partial: "form"
 
 .container-bottom.left

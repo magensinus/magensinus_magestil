@@ -2,17 +2,22 @@
 
 class StudentsController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :students, only: [:index]
+  before_action :wallets, only: [:index]
 
   # /students
   def index
-    @wallet_categories ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 
   private
 
-  # Object
-  def object
-    @object = Students.first!
+  # Students
+  def students
+    @students = Students.first!
+  end
+
+  # Wallets
+  def wallets
+    @wallets ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 end

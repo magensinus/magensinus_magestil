@@ -1,6 +1,7 @@
 /* Index */
 
 .container-top.left
+  / Breadcrumbs
   .breadcrumbs
     .breadcrumbs-box
       .breadcrumbs-item
@@ -10,31 +11,19 @@
           = t("home")
 
 .container-middle.left
-
+  / Content
   .content
     .content-box
       .content-item
-        - if @object.title.presence
-          %h1= @object.try(:title)
+        - if @parents.title.presence
+          %h1= @parents.try(:title)
         .separator.small
-        - if @object.description.presence
+        - if @parents.description.presence
           .trix
-            = safe_join([@object.try(:description).html_safe])
+            = safe_join([@parents.try(:description).html_safe])
 
   .separator.small
 
-  .wallets
-    .wallets-box
-      - @wallet_categories.each do |wallet_category|
-        - wallet_category.assets.each do |asset|
-          .wallets-item
-            .wallets-inner
-              = link_to asset.document_box_url.to_s, target: :blank do
-                .icon.left
-                  = image_tag "icons/underscore.png"
-                - if asset.document_caption.presence
-                  = asset.document_caption
-                - else
-                  = t("document")
+  = render partial: "wallets"
 
 .container-bottom.left

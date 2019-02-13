@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show], controller: :courses do
     resources :sections, only: [:index, :show], controller: :sections
   end
-  resources :articles, only: [:index], controller: :articles
+  resources :articles, only: [:index, :show], controller: :articles
   resources :contact, only: [:index], controller: :contact
   resources :students, only: [:index], controller: :students
   resources :parents, only: [:index], controller: :parents

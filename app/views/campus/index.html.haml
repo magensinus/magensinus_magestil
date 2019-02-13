@@ -23,13 +23,7 @@
 
   .separator.small
 
-  .partnerships
-    .partnerships-box
-      - @campus_assets.each do |asset|
-        .partnerships-item
-          .partnerships-inner
-            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
-              = image_tag(asset.image_box_url(:thumb))
+  = render partial: "campus_assets"
 
 
   .separator.small
@@ -46,12 +40,6 @@
 
   .separator.small
 
-  .partnerships
-    .partnerships-box
-      - @equipment_assets.each do |asset|
-        .partnerships-item
-          .partnerships-inner
-            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
-              = image_tag(asset.image_box_url(:thumb))
+  = render partial: "equipment_assets"
 
 .container-bottom.left

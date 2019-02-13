@@ -33,8 +33,8 @@ gem "jbuilder", "~> 2.5"
 # gem "capistrano-rails", group: :development
 
 # Load Mies Magensinus
-# gem "mies", "0.0.1.alpha", github: "magensinus/mies_magensinus"
-gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus"
+gem "mies", "0.0.1.alpha", github: "magensinus/mies_magensinus"
+# gem "mies", "0.0.1.alpha", path: "/Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus"
 
 # Haml-rails provides Haml generators for Rails.
 gem "haml-rails", "~> 1.0"

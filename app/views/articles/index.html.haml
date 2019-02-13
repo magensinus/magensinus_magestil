@@ -14,11 +14,23 @@
   .content
     .content-box
       .content-item
-        - if @object.title.presence
-          %h1= @object.try(:title)
+        - if @articles.title.presence
+          %h1= @articles.try(:title)
         .separator.small
-        - if @object.description.presence
+        - if @articles.description.presence
           .trix
-            = safe_join([@object.try(:description).html_safe])
+            = safe_join([@articles.try(:description).html_safe])
+
+  .articles
+    .articles-box
+      - @journal_articles.each do |journal_article|
+        .articles-item
+          .articles-inner
+            = image_tag journal_article.thumb_box_magestil_url
+          .separator.extra-small
+          = link_to article_path(journal_article), class: "blue" do
+            .icon.left
+              = image_tag "icons/underscore.png"
+            = journal_article.title
 
 .container-bottom.left

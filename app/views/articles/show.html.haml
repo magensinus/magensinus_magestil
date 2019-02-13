@@ -1,0 +1,42 @@
+/* Index */
+
+.container-top.left
+  / Breadcrumbs
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to articles_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("back")
+
+.container-middle.left
+  / Content
+  .content.ttt
+    .content-box
+      .content-item
+        - if @journal_article.title.presence
+          %h1= @journal_article.try(:title)
+        .separator.small
+        - if @journal_article.description.presence
+          .trix
+            = safe_join([@journal_article.try(:description).html_safe])
+
+  // Journal articles
+  .content
+    .content-box
+      - @journal_article.assets.order(position: :asc).each do |asset|
+        - if asset.text == true
+          .content-item
+            .trix
+              = safe_join([asset.text_box.html_safe])
+        - if asset.image == true
+          .content-item
+            .media
+              = image_tag asset.image_box_url.to_s, class: "altai-center"
+        / - if asset.video == true
+        .content-item
+          .media
+            %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "504", src: "https://www.youtube.com/embed/7VKlSrxfho0", type: "text/html", width: "896" }
+
+.container-bottom.left

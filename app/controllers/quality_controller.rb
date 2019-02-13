@@ -2,17 +2,22 @@
 
 class QualityController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :quality, only: [:index]
+  before_action :wallets, only: [:index]
 
   # /quality
   def index
-    @wallet_categories ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 
   private
 
   # Quality
-  def object
-    @object = Quality.first!
+  def quality
+    @quality = Quality.first!
+  end
+
+  # Wallets
+  def wallets
+    @wallets ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
   end
 end
