@@ -6,8 +6,9 @@ GIT
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
 
-PATH
-  remote: /Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus
+GIT
+  remote: https://github.com/magensinus/mies_magensinus.git
+  revision: 863cc7cf07e9ffd668e4049114c3765d9b55e405
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)

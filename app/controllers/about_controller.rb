@@ -2,7 +2,7 @@
 
 class AboutController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :about, only: [:index]
 
   # /about
   def index
@@ -10,8 +10,8 @@ class AboutController < ApplicationController
 
   private
 
-  # Object
-  def object
-    @object = About.first!
+  # About
+  def about
+    @about = About.first!
   end
 end

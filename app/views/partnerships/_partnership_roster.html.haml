@@ -1,0 +1,18 @@
+/* Content */
+
+.partnerships
+  .partnerships-box
+    - objects.each do |partnership|
+      .partnerships-item
+        .partnerships-inner
+          - if partnership.url.presence
+            = link_to partnership.url, target: :blank, class: "blue" do
+              - if partnership.thumb_box.presence
+                = image_tag partnership.thumb_box_url.to_s
+              - else
+                = partnership.title
+          - else
+            - if partnership.thumb_box.presence
+              = image_tag partnership.thumb_box_url.to_s
+            - else
+              %p= partnership.title

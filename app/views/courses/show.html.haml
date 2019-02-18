@@ -1,48 +1,9 @@
-/* Index */
+/* show */
 
 .container-top.left
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to courses_path, class: "link small" do
-          .icon.left
-            = image_tag "icons/back.png"
-          = t("back")
-
+  = render partial: "breadcrumbs"
 .container-middle.left
-
-  .content
-    .content-box
-      .content-item
-        - if @course.title.presence
-          %h1.blue-500-cl
-            .icon.left
-              = image_tag "icons/course.png"
-            = @course.try(:title)
-
-  .section-content
-    .section-content-box
-      .section-content-item
-        .section-content-left
-          .section-content-inner#ajax-content
-            %h3= @section.title
-            - @assets.each do |asset|
-              .trix
-                = safe_join([asset.text_box.html_safe])
-        .section-content-right
-          .section-navigation
-            .section-navigation-box
-              - @sections.each do |section|
-                .section-navigation-item
-                  = link_to section.title, course_section_path(@course, section), remote: true, class: "button large blue"
-              - if @course.image_box_magestil.presence
-                .section-navigation-item
-                  = link_to "Componentes de Formação", @course.image_box_magestil_url.to_s, target: :blank, "data-featherlight" => "image", class: "button large blue gallery"
-              - if @course.document_box_magestil.presence
-                .section-navigation-item
-                  = link_to "Descarregar PDF", @course.document_box_magestil_url.to_s, target: :blank, class: "button large blue"
-              - if @course.video_box.presence
-                .section-navigation-item
-                  = link_to "Ver Vídeo", "https://www.youtube.com/embed/#{@course.video_box}", "data-featherlight" => "iframe", "data-featherlight-iframe-allowfullscreen" => "true", "data-featherlight-iframe-frameborder" => "0", "data-featherlight-iframe-height" => "540", "data-featherlight-iframe-width" => "960", class: "button large blue"
-
+  = render partial: "content", locals: { object: @course }
+  = render partial: "section_content"
 .container-bottom.left
+= render "theme", object: @course

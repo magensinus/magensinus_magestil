@@ -1,0 +1,38 @@
+// Courses theme
+:coffee
+  # Title
+  $("h1.set-theme-#{object.slug}, h3.set-theme-#{object.slug}").css
+    "color": "#{object.try(:font_color_one)}"
+
+  primaryButtonColor = [
+    "
+      background-color: #{object.try(:background_color_one)} !important;
+      border: 1px solid #{object.try(:background_color_one)} !important;
+      color: #{object.try(:font_color_one)} !important;
+    "
+  ]
+
+  secondaryButtonColor = [
+    "
+      background-color: #{object.try(:background_color_two)} !important;
+      border: 1px solid #{object.try(:background_color_two)} !important;
+      color: #{object.try(:font_color_two)} !important;
+    "
+  ]
+
+  # Breadcrumbs Links
+  $("a.set-theme-#{object.slug}").attr(
+    "style",
+    primaryButtonColor
+  )
+
+  $("a.set-theme-#{object.slug}").hover(->
+    $(this).attr(
+      "style",
+      secondaryButtonColor
+    )
+  ).mouseout ->
+    $(this).attr(
+      "style",
+      primaryButtonColor
+    )

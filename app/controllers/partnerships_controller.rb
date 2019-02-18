@@ -2,17 +2,17 @@
 
 class PartnershipsController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :partnerships, only: [:index]
 
   # /partnerships
   def index
-    @partnerships = Partnerships::Identity.where(published: true, magestil: true)
+    @partnership_roster = Partnerships::Identity.where(published: true, magestil: true)
   end
 
   private
 
   # Object
-  def object
-    @object = Partnerships.first!
+  def partnerships
+    @partnerships = Partnerships.first!
   end
 end

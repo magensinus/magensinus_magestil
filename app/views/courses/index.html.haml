@@ -1,46 +1,8 @@
 /* Index */
 
 .container-top.left
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to root_path, class: "link small" do
-          .icon.left
-            = image_tag "icons/back.png"
-          = t("home")
-
+  = render partial: "breadcrumbs"
 .container-middle.left
-
-  .content
-    .content-box
-      .content-item
-        - if @object.title.presence
-          %h1= @object.try(:title)
-        .separator.small
-        - if @object.description.presence
-          .trix
-            = safe_join([@object.try(:description).html_safe])
-
-  / Courses
-  .courses
-    .courses-box
-      - @categories.each do |category|
-        - category.courses.each do |course|
-          .courses-item
-            .courses-right
-              .figure{ style: "background-image: url(#{image_path "course_thumbnail.png"})" }
-            .courses-left
-              %h3.blue-500-cl
-                .icon.left
-                  = image_tag "icons/course.png"
-                = course.title
-              .separator.small
-              .trix.left
-                = safe_join([course.try(:description).html_safe])
-              = link_to "Ler Mais", course_path(course), class: "button large blue left"
-              - if course.video_box.presence
-                = link_to "https://www.youtube.com/embed/#{course.video_box}", "data-featherlight" => "iframe", "data-featherlight-iframe-allowfullscreen" => "true", "data-featherlight-iframe-frameborder" => "0", "data-featherlight-iframe-height" => "540", "data-featherlight-iframe-width" => "960", class: "link large gray right" do
-                  .icon.left
-                    = image_tag "icons/video.png"
-                  Ver Vídeo
+  = render partial: "parent", locals: { parent: @parent }
+  = render partial: "courses", locals: { objects: @categories }
 .container-bottom.left

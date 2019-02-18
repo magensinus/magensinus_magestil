@@ -1,0 +1,16 @@
+/* Breadcrumbs */
+
+.breadcrumbs
+  .breadcrumbs-box
+    - if params[:action] == "index"
+      .breadcrumbs-item
+        = link_to root_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("home")
+    - else
+      .breadcrumbs-item
+        = link_to courses_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("back")

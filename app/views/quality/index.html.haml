@@ -1,29 +1,8 @@
 /* Index */
 
 .container-top.left
-  / Breadcrumbs
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to root_path, class: "link small" do
-          .icon.left
-            = image_tag "icons/back.png"
-          = t("home")
-
+  = render partial: "breadcrumbs"
 .container-middle.left
-  / Content
-  .content
-    .content-box
-      .content-item
-        - if @quality.title.presence
-          %h1= @quality.try(:title)
-        .separator.small
-        - if @quality.description.presence
-          .trix
-            = safe_join([@quality.try(:description).html_safe])
-
-  .separator.small
-
+  = render partial: "quality", locals: { object: @quality }
   = render partial: "wallets"
-
 .container-bottom.left

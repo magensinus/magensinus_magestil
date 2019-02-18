@@ -1,43 +1,8 @@
 /* Index */
 
 .container-top.left
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to root_path, class: "link small" do
-          .icon.left
-            = image_tag "icons/back.png"
-          = t("home")
-
+  = render partial: "breadcrumbs"
 .container-middle.left
-
-  .content
-    .content-box
-      .content-item
-        - if @object.title.presence
-          %h1= @object.try(:title)
-        .separator.small
-        - if @object.description.presence
-          .trix
-            = safe_join([@object.try(:description).html_safe])
-
-  .separator.small
-
-  .partnerships
-    .partnerships-box
-      - @partnerships.each do |partnership|
-        .partnerships-item
-          .partnerships-inner
-            - if partnership.url.presence
-              = link_to partnership.url, target: :blank, class: "blue" do
-                - if partnership.thumb_box.presence
-                  = image_tag partnership.thumb_box_url.to_s
-                - else
-                  = partnership.title
-            - else
-              - if partnership.thumb_box.presence
-                = image_tag partnership.thumb_box_url.to_s
-              - else
-                %p= partnership.title
-
+  = render partial: "partnerships", locals: { object: @partnerships }
+  = render partial: "partnership_roster", locals: { objects: @partnership_roster }
 .container-bottom.left

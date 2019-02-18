@@ -1,0 +1,10 @@
+/* Content */
+
+.content
+  .content-box
+    .content-item
+      - if object.title.presence
+        %h1{ class: "set-theme-#{object.slug}" }
+          .icon.left
+            = image_tag "icons/course.png"
+          = object.try(:title)

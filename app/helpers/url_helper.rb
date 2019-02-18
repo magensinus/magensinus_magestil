@@ -60,7 +60,6 @@ module UrlHelper
   #   current_page?(link_path) ? "active" : ""
   # end
 
-
   # Active Link
   def active_class(options = {})
     name_of_controller = options[:controller] || nil
@@ -68,9 +67,7 @@ module UrlHelper
     request_path       = options[:path]       || nil
 
     if request_path.nil?
-      if (name_of_action.nil? or name_of_action == action_name) and name_of_controller == controller_name
-        "active"
-      end
+      "active" if (name_of_action.nil? || name_of_action == action_name) && name_of_controller == controller_name
     else
       request_path == request.path ? "active" : ""
     end

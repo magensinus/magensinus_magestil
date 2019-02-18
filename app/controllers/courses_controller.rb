@@ -2,7 +2,7 @@
 
 class CoursesController < ApplicationController
   # Callbacks
-  before_action :object, only: [:index]
+  before_action :parent, only: [:index]
   before_action :course, only: [:show]
   before_action :categories, only: [:index]
 
@@ -24,9 +24,9 @@ class CoursesController < ApplicationController
 
   private
 
-  # Object
-  def object
-    @object = Courses.first!
+  # Parent
+  def parent
+    @parent = Courses.first!
   end
 
   # Course

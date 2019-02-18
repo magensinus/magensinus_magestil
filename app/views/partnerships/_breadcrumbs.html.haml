@@ -1,0 +1,9 @@
+/* Breadcrumbs */
+
+.breadcrumbs
+  .breadcrumbs-box
+    .breadcrumbs-item
+      = link_to root_path, class: "link small" do
+        .icon.left
+          = image_tag "icons/back.png"
+        = t("home")

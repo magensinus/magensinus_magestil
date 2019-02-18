@@ -1,0 +1,11 @@
+/* Content */
+
+.content
+  .content-box
+    .content-item
+      - if parent.title.presence
+        %h1= parent.try(:title)
+      .separator.small
+      - if parent.description.presence
+        .trix
+          = safe_join([parent.try(:description).html_safe])

@@ -1,45 +1,11 @@
 /* Index */
 
 .container-top.left
-  .breadcrumbs
-    .breadcrumbs-box
-      .breadcrumbs-item
-        = link_to root_path, class: "link small" do
-          .icon.left
-            = image_tag "icons/back.png"
-          = t("home")
-
+  = render partial: "breadcrumbs"
 .container-middle.left
-
-  .content
-    .content-box
-      .content-item
-        - if @campus.title.presence
-          %h1= @campus.try(:title)
-        .separator.small
-        - if @campus.description.presence
-          .trix
-            = safe_join([@campus.try(:description).html_safe])
-
-  .separator.small
-
+  = render partial: "campus", locals: { object: @campus }
   = render partial: "campus_assets"
-
-
   .separator.small
-
-  .content
-    .content-box
-      .content-item
-        - if @equipment.title.presence
-          %h2= @equipment.try(:title)
-        .separator.small
-        - if @equipment.description.presence
-          .trix
-            = safe_join([@equipment.try(:description).html_safe])
-
-  .separator.small
-
+  = render partial: "equipment", locals: { object: @equipment }
   = render partial: "equipment_assets"
-
 .container-bottom.left
