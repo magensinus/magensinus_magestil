@@ -2,29 +2,16 @@
 
 .universal
   .responsive-navigation.altai-toggle
-    .responsive-navigation-box
-      .responsive-navigation-column
-        .responsive-navigation-item
-          = link_to "Quem Somos", about_index_path, class: "blue altai-go-to"
-        .responsive-navigation-item
-          = link_to "Instalações & Equipamento", campus_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Qualidade", quality_index_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Parcerias", partnerships_path, class: "blue"
-      .responsive-navigation-column
-        .responsive-navigation-item
-          = link_to "Cursos", courses_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Notícias", articles_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Contactos", contact_index_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Newsletter", newsletter_path, class: "blue"
-      .responsive-navigation-column
-        .responsive-navigation-item
-          = link_to "Alunos", students_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Pais", parents_path, class: "blue"
-        .responsive-navigation-item
-          = link_to "Professores", tutors_path, class: "blue"
+    %nav.responsive-navigation-box
+      %ul.responsive-navigation-column
+        - fetch_responsive_left_urls.each do |object|
+          %li.responsive-navigation-item
+            = link_to object[:title], object[:url], class: "blue #{active_class(controller: object[:controller])}"
+      %ul.responsive-navigation-column
+        - fetch_responsive_middle_urls.each do |object|
+          %li.responsive-navigation-item
+            = link_to object[:title], object[:url], class: "blue #{active_class(controller: object[:controller])}"
+      %ul.responsive-navigation-column
+        - fetch_responsive_right_urls.each do |object|
+          %li.responsive-navigation-item
+            = link_to object[:title], object[:url], class: "blue #{active_class(controller: object[:controller])}"

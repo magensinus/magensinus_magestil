@@ -1,26 +1,7 @@
 /* Secondary navigation */
 
-.secondary-navigation
-  .secondary-navigation-box
-    .secondary-navigation-item
-      = link_to "Quem Somos", about_index_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Instalações & Equipamento", campus_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Qualidade", quality_index_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Parcerias", partnerships_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Cursos", courses_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Notícias", articles_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Contactos", contact_index_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Newsletter", newsletter_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Alunos", students_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Pais", parents_path, class: "white"
-    .secondary-navigation-item
-      = link_to "Professores", tutors_path, class: "white"
+%nav.secondary-navigation
+  %ul.secondary-navigation-box
+    - fetch_secondary_urls.each do |object|
+      %li.secondary-navigation-item
+        = link_to object[:title], object[:url], class: "white #{active_class(controller: object[:controller])}"
