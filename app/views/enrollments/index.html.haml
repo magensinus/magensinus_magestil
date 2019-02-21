@@ -1,0 +1,11 @@
+// Index
+
+
+
+.container-top.left
+  = render partial: "breadcrumbs"
+.container-middle.left
+  = render partial: "enrollments", locals: { object: @academy_category }
+  - unless flash[:success]
+    = render "form", parent: @academy_category, object: @academy_enrollment, courses: @academy_courses, settings: @settings
+.container-bottom.left

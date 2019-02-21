@@ -6,6 +6,11 @@ module ApplicationHelper
     Rails.configuration.application_configuration
   end
 
+  # Fetch settings
+  def settings
+    @settings = Settings.first
+  end
+
   # Vcard
   def vcard
     @vcard ||= Contact.first!

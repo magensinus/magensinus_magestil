@@ -1,0 +1,124 @@
+// Form
+
+= form_with model: [parent, object], url: category_enrollments_path, class: "form", local: true do |f|
+  = f.hidden_field :academy_category_id, value: parent.id
+  %fieldset
+    %legend
+      Cursos disponíveis
+      %p.extra-small Os campos marcados com (*) são obrigatórios.
+    .form-row
+      .field.col-large-2-1
+        = f.label "Pelo menos um curso terá que ser selecionado *"
+    .form-row
+      = f.collection_check_boxes :course_ids, courses, :id, :title, include_hidden: false do |tag|
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+        .field.col-large-2-1
+          .checkbox
+            = tag.check_box
+            = tag.label
+  .separator.extra-small
+  %fieldset
+    %legend
+      Informação do Estudante
+      %p.extra-small Os campos marcados com (*) são obrigatórios.
+    .form-row
+      .field.col-large-3-1
+        = f.label "Nome *"
+        .input
+          = f.text_field :name
+      .field.col-large-3-1
+        = f.label "Sobrenome *"
+        .input
+          = f.text_field :surname
+      .field.col-large-3-1
+        = f.label "Data de Nascimento *"
+        .date.wide
+          = f.date_field :dob, as: :date, value: f.object.try(:strftime, "%m/%d/%Y"), max: Time.zone.today, class: "wide"
+    .form-row
+      .field.col-large-2-1
+        = f.label "Email *"
+        .input
+          = f.text_field :email
+      .field.col-large-2-1
+        = f.label "Telefone *"
+        .input
+          = f.text_field :phone
+    .separator.extra-small
+    .form-row
+      .field
+        = f.label "Morada"
+        .input
+          = f.text_field :address_one
+      .field.col-large-3-1
+        = f.label "Código Postal"
+        .input
+          = f.text_field :postcode
+      .field.col-large-3-1
+        = f.label "Cidade"
+        .input
+          = f.text_field :city
+      .field.col-large-3-1
+        = f.label "País"
+        .input
+          = f.text_field :country
+    .separator.extra-small
+    %fieldset
+      %legend
+        Informação do Encarregado de Educação
+        %p.extra-small Os campos marcados com (*) são obrigatórios.
+      .form-row
+        .field.col-large-2-1
+          = f.label "Nome"
+          .input
+            = f.text_field :secondary_name
+        .field.col-large-2-1
+          = f.label "Sobrenome"
+          .input
+            = f.text_field :secondary_surname
+      .form-row
+        .field.col-large-2-1
+          = f.label "Email"
+          .input
+            = f.text_field :secondary_email
+        .field.col-large-2-1
+          = f.label "Telefone"
+          .input
+            = f.text_field :secondary_phone
+    .separator.extra-small
+    .form-row
+      .field
+        .checkbox
+          = f.check_box :accept_terms
+          = f.label :accept_terms, "hajkhdjka"
+    .separator.medium
+    .form-row
+      .field
+        .submit
+          = button_tag "Subscrever", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large blue wide"

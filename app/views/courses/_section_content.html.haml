@@ -24,3 +24,5 @@
             - if @course.video_box.presence
               .section-navigation-item
                 = link_to "Ver Vídeo", "https://www.youtube.com/embed/#{@course.video_box}", "data-featherlight" => "iframe", "data-featherlight-iframe-allowfullscreen" => "true", "data-featherlight-iframe-frameborder" => "0", "data-featherlight-iframe-height" => "540", "data-featherlight-iframe-width" => "960", class: "button large blue set-theme-#{@course.slug}"
+            .section-navigation-item
+              = link_to "Pré-inscrição", category_enrollments_path(@course.category), remote: false, class: "button large blue set-theme-#{@course.slug}"
