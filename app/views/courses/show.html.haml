@@ -3,7 +3,6 @@
 .container-top.left
   = render partial: "breadcrumbs"
 .container-middle.left
-  = @course.category.title
   = render partial: "content", locals: { object: @course }
   = render partial: "section_content"
 .container-bottom.left
