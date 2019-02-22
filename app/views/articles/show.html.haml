@@ -17,7 +17,6 @@
       .content-item
         - if @journal_article.title.presence
           %h1= @journal_article.try(:title)
-        .separator.small
         - if @journal_article.description.presence
           .separator.small
             .trix
