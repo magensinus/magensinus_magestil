@@ -1,6 +1,6 @@
 // Form
 
-= form_with model: [parent, object], url: category_enrollments_path, class: "form", local: true do |f|
+= form_with model: [parent, object], url: category_enrollments_path, local: true do |f|
   = f.hidden_field :academy_category_id, value: parent.id
   %fieldset
     %legend
@@ -121,4 +121,4 @@
     .form-row
       .field
         .submit
-          = button_tag "Subscrever", type: :submit, data: { disable_with: "Please wait a moment..." }, class: "button double-extra-large blue wide"
+          = button_tag "Subscrever", type: :submit, data: { disable_with: "Por favor esperar um momento..." }, class: "button double-extra-large blue wide"

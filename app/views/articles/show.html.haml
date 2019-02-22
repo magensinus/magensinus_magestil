@@ -12,7 +12,7 @@
 
 .container-middle.left
   / Content
-  .content.ttt
+  .content.col-large-4-3
     .content-box
       .content-item
         - if @journal_article.title.presence
@@ -21,9 +21,6 @@
         - if @journal_article.description.presence
           .trix
             = safe_join([@journal_article.try(:description).html_safe])
-
-  // Journal articles
-  .content
     .content-box
       - @journal_article.assets.order(position: :asc).each do |asset|
         - if asset.text == true
@@ -38,5 +35,16 @@
         .content-item
           .media
             %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "504", src: "https://www.youtube.com/embed/7VKlSrxfho0", type: "text/html", width: "896" }
-
+  .content.col-large-4-1
+    .content-box
+      .content-item
+        .articles-sidebar
+          %h4 Artigos Recentes
+          .articles-sidebar-box
+            - recent_journal_articles.each do |item|
+              .articles-sidebar-item
+                = link_to article_path(item), class: "link small blue" do
+                  .icon.left
+                    = image_tag "icons/underscore.png"
+                  = item.title
 .container-bottom.left
