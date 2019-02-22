@@ -19,8 +19,9 @@
           %h1= @journal_article.try(:title)
         .separator.small
         - if @journal_article.description.presence
-          .trix
-            = safe_join([@journal_article.try(:description).html_safe])
+          .separator.small
+            .trix
+              = safe_join([@journal_article.try(:description).html_safe])
     .content-box
       - @journal_article.assets.order(position: :asc).each do |asset|
         - if asset.text == true
@@ -31,10 +32,10 @@
           .content-item
             .media
               = image_tag asset.image_box_url.to_s, class: "altai-center"
-        / - if asset.video == true
-        .content-item
-          .media
-            %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{video_box_url}", type: "text/html", width: "656" }
+        - if asset.video == true
+          .content-item
+            .media
+              %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{video_box_url}", type: "text/html", width: "656" }
   .content.col-large-4-1
     .content-box
       .content-item
