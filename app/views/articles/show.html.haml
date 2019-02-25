@@ -19,8 +19,8 @@
           %h1= @journal_article.try(:title)
         - if @journal_article.description.presence
           .separator.small
-            .trix
-              = safe_join([@journal_article.try(:description).html_safe])
+          .trix
+            = safe_join([@journal_article.try(:description).html_safe])
     .content-box
       - @journal_article.assets.order(position: :asc).each do |asset|
         - if asset.text == true
