@@ -9,3 +9,8 @@
       - if object.description.presence
         .trix
           = safe_join([object.try(:description).html_safe])
+    - if object.body.presence
+      .separator.small
+      .content-item
+        .trix
+          = safe_join([object.try(:body).html_safe])

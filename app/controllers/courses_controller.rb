@@ -14,8 +14,8 @@ class CoursesController < ApplicationController
   def show
     get_sections = @course.sections
     @sections = get_sections.all
-    @section = get_sections.first!
-    @assets = @section.section_assets.all
+    @section = get_sections.first! if get_sections.presence
+    @assets = @section.section_assets.all if @section.presence
     respond_to do |format|
       format.html
       format.js

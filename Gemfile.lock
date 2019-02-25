@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 1199853ff8da5103f3f0c51e979d7ae20c758c5f
+  revision: 8c0969694ed55ab2b3246fd2e975c207babf4534
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -66,7 +66,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (9.4.8)
+    autoprefixer-rails (9.4.9)
       execjs
     bindex (0.5.0)
     bootsnap (1.4.0)
@@ -313,7 +313,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     mimemagic (0.3.3)
-    mini_magick (4.9.2)
+    mini_magick (4.9.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)

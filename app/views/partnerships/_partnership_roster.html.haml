@@ -10,9 +10,12 @@
               - if partnership.thumb_box.presence
                 = image_tag partnership.thumb_box_url.to_s
               - else
+                .icon.left
+                  = image_tag "icons/underscore.png"
                 = partnership.title
           - else
             - if partnership.thumb_box.presence
               = image_tag partnership.thumb_box_url.to_s
             - else
-              %p= partnership.title
+              %p
+                = partnership.title

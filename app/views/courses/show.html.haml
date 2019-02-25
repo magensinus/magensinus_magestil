@@ -4,6 +4,7 @@
   = render partial: "breadcrumbs"
 .container-middle.left
   = render partial: "content", locals: { object: @course }
-  = render partial: "section_content"
+  - if @sections.presence
+    = render partial: "section_content"
 .container-bottom.left
 = render "theme", object: @course

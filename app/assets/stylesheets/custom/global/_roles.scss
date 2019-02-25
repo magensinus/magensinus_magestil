@@ -1,0 +1,32 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Roles
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+header {
+  &.header {
+    background-color: $white;
+    color: $blue;
+  }
+}
+
+div {
+  &.hero {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+main {
+  &.main {
+    margin: 0;
+    padding: 32px 0;
+  }
+}
+
+footer {
+  &.footer {
+    background-color: $blue;
+    color: $white;
+  }
+}

@@ -18,6 +18,6 @@ class TutorsController < ApplicationController
 
   # Wallets
   def wallets
-    @wallets ||= Wallet::Category.where(magestil: true).includes(:assets).where(wallet_type: "students").order(position: :asc)
+    @wallets ||= Wallet::Category.where(published: true, magestil: true).includes(:assets).where(wallet_type: "tutors").order(position: :asc)
   end
 end
