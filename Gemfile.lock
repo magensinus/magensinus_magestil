@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 8c0969694ed55ab2b3246fd2e975c207babf4534
+  revision: 5b6527e53fcaab878ced41a23ea15dbe7820fd92
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -73,7 +73,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (11.0.0)
-    capybara (3.13.2)
+    capybara (3.14.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
