@@ -11,7 +11,7 @@
             - else
               .figure
           .courses-left
-            %h3{ class: "set-theme-#{course.slug}" }
+            %h3
               - if course.icon_box_magestil.presence
                 .icon.left
                   = image_tag course.icon_box_magestil_url.to_s
