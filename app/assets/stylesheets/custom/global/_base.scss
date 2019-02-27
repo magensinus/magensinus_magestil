@@ -4,25 +4,13 @@
 // -------------------------------------------------------------
 
 html {
-  background-color: $blue;
+  background-color: $blue-500;
+  color: $black;
 }
 
 body {
   background-color: $gray-000;
-}
-
-html,
-body {
-  @include border-box;
-  @include clearfix;
   color: $black;
-  font-family: $sans;
-  font-size: 18px;
-  letter-spacing: .01em;
-  line-height: 24px;
-  margin: 0;
-  padding: 0;
-  width: auto;
 }
 
 // Media Query 240px

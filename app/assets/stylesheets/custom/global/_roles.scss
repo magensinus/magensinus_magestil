@@ -6,7 +6,7 @@
 header {
   &.header {
     background-color: $white;
-    color: $blue;
+    color: $gray-900;
   }
 }
 
@@ -19,8 +19,8 @@ div {
 
 main {
   &.main {
-    margin: 0;
-    padding: 32px 0;
+    background-color: $gray-000;
+    color: $gray-900;
   }
 }
 
