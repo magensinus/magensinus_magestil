@@ -6,9 +6,8 @@ GIT
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
 
-GIT
-  remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 477550a35182d238b5f989e204b49d9079c5f352
+PATH
+  remote: /Users/tonydefaria/Box Sync/iigethr/clients/magensinus/gems/mies_magensinus
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -63,7 +62,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    archive-zip (0.11.0)
+    archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
     autoprefixer-rails (9.4.9)
@@ -317,7 +316,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    msgpack (1.2.6)
+    msgpack (1.2.7)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     netrc (0.11.0)
