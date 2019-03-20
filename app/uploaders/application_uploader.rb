@@ -4,6 +4,9 @@ class ApplicationUploader < CarrierWave::Uploader::Base
   # Include MiniMagick support:
   include CarrierWave::MiniMagick
 
+  # Versions
+  version :thumb
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

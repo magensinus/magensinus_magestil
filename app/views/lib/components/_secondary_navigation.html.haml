@@ -4,4 +4,4 @@
   %ul.secondary-navigation-box
     - fetch_secondary_urls.each do |object|
       %li.secondary-navigation-item
-        = link_to object[:title], object[:url], class: "white #{active_class(controller: object[:controller])}"
+        = link_to object[:title], object[:url], class: "link white hover-underline #{active_class(controller: object[:controller])}"

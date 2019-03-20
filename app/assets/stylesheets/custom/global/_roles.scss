@@ -6,27 +6,23 @@
 header {
   &.header {
     background-color: $white;
-    color: $gray-700;
   }
 }
 
 div {
   &.hero {
     background-color: $blue;
-    color: $gray-300;
   }
 }
 
 main {
   &.main {
     background-color: $gray-000;
-    color: $gray-700;
   }
 }
 
 footer {
   &.footer {
     background-color: $blue;
-    color: $gray-300;
   }
 }
