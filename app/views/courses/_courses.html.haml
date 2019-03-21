@@ -6,15 +6,15 @@
       - object.courses.each do |course|
         .courses-item
           .courses-right
-            - if course.thumb_box_magestil.presence
-              .figure{ style: "background-image: url(#{image_path course.thumb_box_magestil_url.to_s})" }
+            - if course.thumb_box.presence
+              .figure{ style: "background-image: url(#{image_path course.thumb_box_url.to_s})" }
             - else
               .figure
           .courses-left
             %h3
-              - if course.icon_box_magestil.presence
+              - if course.icon_box.presence
                 .icon.left
-                  = image_tag course.icon_box_magestil_url.to_s
+                  = image_tag course.icon_box_url.to_s
               = course.title
             .separator.small
             .trix.left
