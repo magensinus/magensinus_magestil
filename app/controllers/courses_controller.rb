@@ -16,10 +16,6 @@ class CoursesController < ApplicationController
     @sections = get_sections.all
     @section = get_sections.first! if get_sections.presence
     @assets = @section.section_assets.all if @section.presence
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   private
@@ -36,6 +32,6 @@ class CoursesController < ApplicationController
 
   # Categories
   def categories
-    @categories ||= Academy::Category.where(magestil: true, published: true)
+    @categories ||= Academy::Category.where(magestil: true, published: true).order(position: :asc)
   end
 end
