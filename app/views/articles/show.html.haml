@@ -46,5 +46,5 @@
                 = link_to article_path(item), class: "link small blue" do
                   .icon.left
                     = image_tag "icons/underscore.png"
-                  = item.title
+                  = (item.title).truncate(24)
 .container-bottom.left

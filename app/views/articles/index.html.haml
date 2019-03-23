@@ -31,6 +31,6 @@
           = link_to article_path(journal_article), class: "blue" do
             .icon.left
               = image_tag "icons/underscore.png"
-            = journal_article.title
+            = (journal_article.title).truncate(24)
 
 .container-bottom.left
