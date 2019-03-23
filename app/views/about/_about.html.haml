@@ -2,15 +2,30 @@
 
 .content
   .content-box
-    .content-item
-      - if object.title.presence
+    - if object.title.presence
+      .content-item
         %h1= object.try(:title)
-      .separator.small
-      - if object.description.presence
+    - if object.description.presence
+      .content-item
         .trix
           = safe_join([object.try(:description).html_safe])
     - if object.body.presence
-      .separator.small
       .content-item
         .trix
           = safe_join([object.try(:body).html_safe])
+
+    /* Assets */
+    - if @about_assets.presence
+      - @about_assets.each do |asset|
+        - if asset.text == true
+          .content-item
+            .trix
+              = safe_join([asset.text_box.html_safe])
+        - if asset.image == true
+          .content-item
+            .media.auto.altai-center
+              = image_tag asset.image_box_url.to_s, class: "altai-center"
+        - if asset.video == true
+          .content-item
+            .media.auto.altai-center
+              %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "656" }
