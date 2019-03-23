@@ -8,19 +8,16 @@
           .icon.left
             = image_tag "icons/back.png"
           = t("home")
-
 .container-middle.left
-
   .content
     .content-box
-      .content-item
-        - if @articles.title.presence
+      - if @articles.title.presence
+        .content-item
           %h1= @articles.try(:title)
-        .separator.small
-        - if @articles.description.presence
+      - if @articles.description.presence
+        .content-item
           .trix
             = safe_join([@articles.try(:description).html_safe])
-
   .articles
     .articles-box
       - @journal_articles.each do |journal_article|
@@ -32,5 +29,4 @@
             .icon.left
               = image_tag "icons/underscore.png"
             = (journal_article.title).truncate(24)
-
 .container-bottom.left
