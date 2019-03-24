@@ -6,8 +6,8 @@ class AboutController < ApplicationController
 
   # /about
   def index
-    @about_assets ||= AboutAsset.order(position: :asc)
-    @about_image_assets ||= AboutAsset.where(image: true)
+    @about_assets ||= AboutAsset.where(image: false).order(position: :asc)
+    @about_image_assets ||= AboutAsset.where(image: true).order(position: :asc)
   end
 
   private
