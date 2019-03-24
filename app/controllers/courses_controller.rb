@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
 
   # /courses
   def index
+    @courses = []
+    @categories.each do |category|
+      get_courses = Academy::Course.where(academy_category_id: category.id).order(position: :desc)
+      @courses = get_courses if get_courses
+    end
   end
 
   # /courses/slug
