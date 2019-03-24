@@ -9,6 +9,17 @@
       .content-item
         .trix
           = safe_join([object.try(:description).html_safe])
+- if @about_image_assets.presence
+  / Gallery
+  .gallery
+    .gallery-box
+      - @about_image_assets.each do |asset|
+        .gallery-item
+          .gallery-inner
+            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
+              = image_tag(asset.image_box_url(:thumb))
+.content
+  .content-box
     - if object.body.presence
       .content-item
         .trix
@@ -29,13 +40,3 @@
           .content-item
             .media.auto.altai-center
               %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "656" }
-
-- if @about_image_assets.presence
-  / Gallery
-  .gallery
-    .gallery-box
-      - @about_image_assets.each do |asset|
-        .gallery-item
-          .gallery-inner
-            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
-              = image_tag(asset.image_box_url(:thumb))
