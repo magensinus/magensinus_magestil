@@ -14,5 +14,6 @@ class AboutAsset < ApplicationRecord
   # Uploaders
   # ---------
   # Image
-  mount_uploader :image_box, Magestil::AboutAssetUploader
+  mount_uploader :image_box, Magestil::AssetUploader
+  # mount_uploader :image_box, Magestil::AboutAssetUploader
 end

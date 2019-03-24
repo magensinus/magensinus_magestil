@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 4c57239fb105f8c0ed7a1f00eb47f6e88b4d646e
+  revision: 79e0e1894b3ff8494562249758a90ee75676b57b
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)
@@ -87,7 +87,7 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (2.1.0)
+    chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coffee-rails (4.2.2)
