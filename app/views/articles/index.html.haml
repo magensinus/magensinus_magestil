@@ -23,7 +23,7 @@
       - @journal_articles.each do |journal_article|
         .articles-item
           .articles-inner
-            = image_tag journal_article.thumb_box_url if journal_article.thumb?
+            = image_tag journal_article.thumb_box_url
           .separator.extra-small
           = link_to article_path(journal_article), class: "blue" do
             .icon.left
