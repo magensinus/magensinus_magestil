@@ -41,7 +41,7 @@
         .articles-sidebar
           %h4 Artigos Recentes
           .articles-sidebar-box
-            - recent_journal_articles.each do |item|
+            - recent_journal_articles(@journal_article).each do |item|
               .articles-sidebar-item
                 = link_to article_path(item), class: "link small blue" do
                   .icon.left

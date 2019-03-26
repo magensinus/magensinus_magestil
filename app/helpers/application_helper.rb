@@ -12,8 +12,8 @@ module ApplicationHelper
   end
 
   # Recent journal articles
-  def recent_journal_articles
-    @recent_journal_articles ||= Journal::Article.where(published: true, magestil: true).order(published_at: :desc).limit(10)
+  def recent_journal_articles(object = "")
+    @recent_journal_articles ||= Journal::Article.where(published: true, magestil: true).where.not(id: object.id).order("RANDOM()").limit(5)
   end
 
   # Vcard

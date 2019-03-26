@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     @courses = []
     @categories.each do |category|
       get_courses = Academy::Course.where(academy_category_id: category.id).order(position: :asc)
-      @courses = get_courses if get_courses
+      @courses = get_courses
     end
   end
 
@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
 
   # Parent
   def parent
-    @parent = Courses.first!
+    @parent ||= Courses.first!
   end
 
   # Course
