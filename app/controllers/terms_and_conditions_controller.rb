@@ -6,6 +6,7 @@ class TermsAndConditionsController < ApplicationController
 
   # /terms_and_conditions
   def index
+    @legal_articles ||= Legal::Article.where(published: true, magestil: true).order(published_at: :desc)
   end
 
   private

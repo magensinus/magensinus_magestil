@@ -2,6 +2,9 @@
 
 .brand
   .brand-box
-    .brand-item
+    .brand-item.default
       = link_to root_path do
         = image_tag "brand.png", size: "128x32", class: "altai-center"
+    .brand-item.mobile
+      = link_to root_path do
+        = image_tag "brand.png", size: "128x32", class: "right"

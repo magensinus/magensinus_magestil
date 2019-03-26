@@ -1,0 +1,12 @@
+- unless cookies[:WeLoveCookies].presence
+  .cookies
+    .cookies-box
+      .cookies-item
+        %p.text-center
+          Ao continuar a navegar está a concordar com a utilização de cookies neste site.
+          %br
+          Para mais informações, consulte os nossos
+          = link_to "Termos & Condições", terms_and_conditions_path
+          \.
+      .cookies-item
+        = link_to "Aceitar", "#", class: "button green large we_love_cookies altai-center"

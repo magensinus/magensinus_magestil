@@ -2,9 +2,11 @@
   "name": "magensinus_magestil",
   "private": true,
   "dependencies": {
+    "altai_off": "^1.1.4",
     "altai_center": "^0.0.3",
     "altai_panel": "^1.0.4",
     "altai_toggle": "^1.0.20",
+    "js-cookie": "^2",
     "jquery": "^3"
   }
 }

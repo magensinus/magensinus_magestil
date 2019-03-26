@@ -9,6 +9,13 @@ altai_center@^0.0.3:
   dependencies:
     jquery "^3.0"
 
+altai_off@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/altai_off/-/altai_off-1.1.4.tgz#64e8d6af8f4c3b4bfd98c53f02fd9aac6fd9314d"
+  integrity sha512-ofY67auWOlF8XprxRtwsjanDu0UflpQ0TcUoDjgaDetjs4Pu7vTotZsKT4zAE5sLgNQwu6eqMg70d8lRnOz13w==
+  dependencies:
+    jquery "^3.0"
+
 altai_panel@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/altai_panel/-/altai_panel-1.0.4.tgz#6341ea96bfc0edf5903fc07c119a96acbe11dd83"
@@ -27,3 +34,8 @@ jquery@^3, jquery@^3.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
+
+js-cookie@^2:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
+  integrity sha1-Gywnmm7s44ChIWi5JIUmWzWx7/s=

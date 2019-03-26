@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/magensinus/mies_magensinus.git
-  revision: 1bb46818a67fb370a13d1c7f6b25483be07fadc9
+  revision: 619e075c85f2a274ec18f4b704f14b5871733209
   specs:
     mies (0.0.1.alpha)
       autoprefixer-rails (~> 9.0)

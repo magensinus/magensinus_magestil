@@ -1,0 +1,1 @@
+var jQuery;!function(u){u.fn.extend({altaiOff:function(n){var e,t,i,o=u(this);if(i={debug:!1},i=u.extend(i,n),t=function(n){return i.debug?("undefined"===console&&console,console.log(n)):undefined},e=function(){o.each(function(){u(this).on("click",function(n){n.preventDefault()})})},0<o.length)return this.each(function(){e(),t("Altai Off Activated")})}})}(jQuery,window,document);
