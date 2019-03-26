@@ -13,11 +13,11 @@
 
   .content
     .content-box.col-large-2-1
-      .content-item.col-large-2-1
-        - if @object.title.presence
+      - if @object.title.presence
+        .content-item.col-large-2-1
           %h1= @object.try(:title)
-        .separator.small
-        - if @object.description.presence
+      - if @object.description.presence
+        .content-item.col-large-2-1
           .trix
             = safe_join([@object.try(:description).html_safe])
       .content-item.col-large-2-1
@@ -38,5 +38,6 @@
           %p.mg-0= @object.try(:phone)
         - if @object.email.presence
           %p.mg-0= @object.try(:email)
-
+    .content-box.col-large-2-1
+      = render "map", object: @object
 .container-bottom.left
