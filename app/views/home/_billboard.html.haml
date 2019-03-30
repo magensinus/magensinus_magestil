@@ -6,8 +6,10 @@
       .billboard-item
         .separator.medium
         %h1.white-100-cl= @object.title
-        .trix.white-100-cl
-          = safe_join([@object.description])
+        - if @object.description.presence
+          .separator.extra-small
+          .trix.white-100-cl
+            = safe_join([@object.description.html_safe])
 
 - else
   .billboard
@@ -15,5 +17,7 @@
       .billboard-item
         .separator.medium
         %h1.white-100-cl= @object.title
-        .trix.white-100-cl
-          = safe_join([@object.description])
+        - if @object.description.presence
+          .separator.extra-small
+          .trix.white-100-cl
+            = safe_join([@object.description.html_safe])

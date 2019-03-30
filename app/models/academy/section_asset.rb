@@ -15,9 +15,9 @@ module Academy
     # Uploaders
     # ---------
     # Image
-    # mount_uploader :image_box, Academy::ImageUploader
+    mount_uploader :image_box, Academy::AssetUploader
     # Document
-    # mount_uploader :document_box, Academy::DocumentUploader
+    mount_uploader :document_box, Academy::DocumentUploader
 
     # Relationships
     # -------------
