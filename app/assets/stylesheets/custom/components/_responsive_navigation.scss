@@ -1,0 +1,18 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Responsive navigation
+// Project: Magensinus Education
+// -------------------------------------------------------------
+
+$class: "responsive-navigation";
+
+.#{$class} {
+  .#{$class}-box {
+    .#{$class}-column {
+    }
+    .#{$class}-item {
+      a {
+        &.blue { @include link-blue-theme; }
+      }
+    }
+  }
+}

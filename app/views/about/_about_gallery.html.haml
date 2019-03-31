@@ -1,0 +1,10 @@
+/* Gallery */
+
+- if assets.presence
+  .gallery
+    .gallery-box
+      - assets.each do |asset|
+        .gallery-item
+          .gallery-inner
+            = link_to asset.image_box_url.to_s, target: :blank, "data-featherlight" => "image", class: "gallery" do
+              = image_tag(asset.image_box_url(:thumb))

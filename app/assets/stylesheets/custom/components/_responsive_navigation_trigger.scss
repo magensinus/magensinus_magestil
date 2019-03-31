@@ -1,0 +1,19 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Responsive navigation trigger
+// Project: Magensinus Education
+// -------------------------------------------------------------
+
+$class: "responsive-navigation-trigger";
+
+.#{$class} {
+  .#{$class}-box {
+    .#{$class}-item {
+      a {
+        &.blue { @include link-blue-theme; }
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

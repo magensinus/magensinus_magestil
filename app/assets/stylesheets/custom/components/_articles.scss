@@ -1,0 +1,20 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Articles
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+$class: "articles";
+
+.#{$class} {
+  .#{$class}-box {
+    .#{$class}-item {
+      .#{$class}-inner {
+      }
+      a {
+        &.blue {
+          @include link-blue-theme;
+        }
+      }
+    }
+  }
+}

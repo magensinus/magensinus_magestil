@@ -3,4 +3,7 @@
 .responsive-navigation-trigger
   .responsive-navigation-trigger-box.right
     .responsive-navigation-trigger-item
-      = link_to "menu", root_path, class: "blue altai-toggle-trigger"
+      = link_to root_path, class: "link blue altai-toggle-trigger" do
+        .icon.left
+          = image_tag "icons/menu.png"
+        menu

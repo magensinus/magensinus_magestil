@@ -20,17 +20,20 @@
         .content-item
           .trix
             = safe_join([@object.try(:description).html_safe])
-      - @legal_articles.order(position: :asc).each do |asset|
-        - if asset.text == true
-          .content-item
-            .trix
-              = safe_join([asset.text_box.html_safe])
-        - if asset.image == true
-          .content-item
-            .media.auto.altai-center
-              = image_tag asset.image_box_url.to_s, class: "altai-center"
-        - if asset.video == true
-          .content-item
-            .media.auto.altai-center
-              %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "656" }
+      - @legal_articles.order(position: :asc).each do |article|
+        .content-item
+          %h3= article.title
+        - article.assets.each do |asset|
+          - if asset.text == true
+            .content-item
+              .trix
+                = safe_join([asset.text_box.html_safe])
+          - if asset.image == true
+            .content-item
+              .media.auto.altai-center
+                = image_tag asset.image_box_url.to_s, class: "altai-center"
+          - if asset.video == true
+            .content-item
+              .media.auto.altai-center
+                %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "656" }
 .container-bottom.left

@@ -3,9 +3,9 @@
 class CampusController < ApplicationController
   # Callbacks
   before_action :campus, only: [:index]
-  before_action :campus_assets, only: [:index]
+  before_action :campus_gallery, only: [:index]
   before_action :equipment, only: [:index]
-  before_action :equipment_assets, only: [:index]
+  before_action :equipment_gallery, only: [:index]
 
   # /campus
   def index
@@ -18,9 +18,9 @@ class CampusController < ApplicationController
     @campus = Campus.first!
   end
 
-  # Campus assets
-  def campus_assets
-    @campus_assets ||= CampusAsset.all
+  # Campus gallery
+  def campus_gallery
+    @campus_gallery ||= CampusAsset.order(position: :asc)
   end
 
   # Equipment
@@ -28,8 +28,8 @@ class CampusController < ApplicationController
     @equipment = Equipment.first!
   end
 
-  # Equipment assets
-  def equipment_assets
-    @equipment_assets ||= EquipmentAsset.all
+  # Equipment gallery
+  def equipment_gallery
+    @equipment_gallery ||= EquipmentAsset.order(position: :asc)
   end
 end

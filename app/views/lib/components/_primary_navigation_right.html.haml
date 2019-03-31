@@ -3,4 +3,7 @@
 .primary-navigation
   .primary-navigation-box.left
     .primary-navigation-item
-      = link_to "cursos", courses_path, class: "blue"
+      = link_to root_path, class: "link blue altai-toggle-trigger" do
+        // .icon.left
+        //   = image_tag "icons/courses.png"
+        cursos

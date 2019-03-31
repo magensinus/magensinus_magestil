@@ -1,0 +1,17 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Primary navigation
+// Project: Magensinus Education
+// -------------------------------------------------------------
+
+$class: "primary-navigation";
+
+.#{$class} {
+  .#{$class}-box {
+    .#{$class}-item {
+      a {
+        &.blue      { @include link-blue-theme; }
+        &.blue-dark { @include link-blue-dark-theme; }
+      }
+    }
+  }
+}

@@ -5,10 +5,10 @@
     .billboard-box
       .billboard-item
         .separator.medium
-        %h1.white-100-cl= @object.title
+        %h1.white-cl= @object.title
         - if @object.description.presence
           .separator.extra-small
-          .trix.white-100-cl
+          .trix.white-cl
             = safe_join([@object.description.html_safe])
 
 - else
@@ -16,8 +16,8 @@
     .billboard-box
       .billboard-item
         .separator.medium
-        %h1.white-100-cl= @object.title
+        %h1.white-cl= @object.title
         - if @object.description.presence
           .separator.extra-small
-          .trix.white-100-cl
+          .trix.white-cl
             = safe_join([@object.description.html_safe])

@@ -4,8 +4,8 @@
   = render partial: "breadcrumbs"
 .container-middle.left
   = render partial: "campus", locals: { object: @campus }
-  = render partial: "campus_assets"
+  = render partial: "campus_gallery", locals: { assets: @campus_gallery }
   .separator.small
   = render partial: "equipment", locals: { object: @equipment }
-  = render partial: "equipment_assets"
+  = render partial: "equipment_gallery", locals: { assets: @equipment_gallery }
 .container-bottom.left

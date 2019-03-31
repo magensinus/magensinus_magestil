@@ -1,0 +1,34 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Link Themes
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+@mixin link-blue-theme {
+  color: $blue-500 !important;
+  &:link,
+  &:visited {
+    color: $blue-500 !important;
+  }
+  &:hover,
+  &:active {
+    color: $blue-700 !important;
+  }
+  &.active {
+    color: $blue-700 !important;
+  }
+}
+
+@mixin link-blue-dark-theme {
+  color: $blue-700 !important;
+  &:link,
+  &:visited {
+    color: $gray-700 !important;
+  }
+  &:hover,
+  &:active {
+    color: $blue-900 !important;
+  }
+}
+
+.link-blue-theme { @include link-blue-theme; }
+.link-blue-dark-theme { @include link-blue-dark-theme; }

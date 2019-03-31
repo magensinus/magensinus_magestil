@@ -1,0 +1,24 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Button Themes
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+@mixin button-blue-theme {
+  background-color: $blue-500 !important;
+  border: 1px solid $blue-600 !important;
+  color: $blue-000 !important;
+  &:link,
+  &:visited {
+    background-color: $blue-500 !important;
+    border: 1px solid $blue-600 !important;
+  }
+  &:hover,
+  &:active {
+    background-color: $blue-600 !important;
+    border: 1px solid $blue-700 !important;
+  }
+}
+
+// Classes
+// -------------------------------------------------------------
+.button-blue-theme { @include button-blue-theme; }
