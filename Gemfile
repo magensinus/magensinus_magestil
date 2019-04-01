@@ -58,6 +58,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 # A wrapper for MailChimp API 3.0 and Export API
 gem "gibbon", github: "amro/gibbon"
 
+# Drop-in plug-in for ActionMailer to send emails via Postmark
+gem "postmark-rails", "~> 0.19"
+
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
