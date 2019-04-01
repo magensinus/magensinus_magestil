@@ -6,7 +6,7 @@ class PartnershipsController < ApplicationController
 
   # /partnerships
   def index
-    @partnership_roster = Partnerships::Identity.where(published: true, magestil: true)
+    @partnership_roster = Partnerships::Identity.where(published: true, magestil: true).order(updated_at: :desc)
   end
 
   private

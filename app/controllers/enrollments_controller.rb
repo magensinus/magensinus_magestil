@@ -19,7 +19,7 @@ class EnrollmentsController < ApplicationController
   def create
     @academy_enrollment = @academy_category.enrollments.new(academy_enrollment_params)
     if @academy_enrollment.save
-      ## send_enrollment_email
+      send_enrollment_email
       flash[:success] = @settings.enrollment_success
       redirect_to category_enrollments_path(@academy_category)
     else
