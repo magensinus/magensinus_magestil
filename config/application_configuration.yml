@@ -3,7 +3,7 @@
 default: &default
   title: "Magestil"
   description: "Cursos Profissionais de Nível 4"
-  url: "https://magensinus-magestil-pro.herokuapp.com/"
+  url: "https://www.magestil.pt/"
   twitter_username: "@magensinus"
 
 development:
