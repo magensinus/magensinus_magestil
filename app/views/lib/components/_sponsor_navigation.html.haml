@@ -4,5 +4,5 @@
   .sponsor-navigation-box
     - endorsements.each do |item|
       .sponsor-navigation-item
-        = link_to root_path do
+        = link_to item.url do
           = image_tag item.thumb_box.url.to_s, class: "left", height: "20"
