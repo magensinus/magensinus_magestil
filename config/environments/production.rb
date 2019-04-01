@@ -95,5 +95,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Rack middleware for defining a canonical host name.
-  Rack::CanonicalHost, ENV["CANONICAL_HOST"] if ENV["CANONICAL_HOST"]
+  config.middleware.use Rack::CanonicalHost, ENV["CANONICAL_HOST"] if ENV["CANONICAL_HOST"]
 end
