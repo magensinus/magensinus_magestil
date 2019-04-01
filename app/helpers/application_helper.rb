@@ -25,4 +25,9 @@ module ApplicationHelper
   def networks
     @networks ||= Network.all
   end
+
+  # Endorsements
+  def endorsements
+    @endorsements = Endorsement::Badge.all
+  end
 end

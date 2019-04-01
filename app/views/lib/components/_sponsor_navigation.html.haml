@@ -2,33 +2,7 @@
 
 .sponsor-navigation.right.altai-center
   .sponsor-navigation-box
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
-    .sponsor-navigation-item
-      = link_to root_path do
-        = image_tag "small_sponsor.png", size: "64x32"
+    - endorsements.each do |item|
+      .sponsor-navigation-item
+        = link_to root_path do
+          = image_tag item.thumb_box.url.to_s, class: "left", height: "20"
