@@ -30,4 +30,9 @@ module ApplicationHelper
   def endorsements
     @endorsements = Endorsement::Badge.all
   end
+
+  # Fetch featured article
+  def fetch_featured_article
+    @fetch_featured_article = Journal::Article.where(featured: true, published: true, magestil: true).first
+  end
 end

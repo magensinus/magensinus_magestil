@@ -13,6 +13,12 @@
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "application", "data-turbolinks-track": "reload"
   %body
+    - if fetch_featured_article.presence
+      // Featured
+      .universal.green-500-bg
+        .universal-box
+          .universal-item
+            = render "lib/components/featured"
     = render partial: "lib/global/header"
     = render partial: "lib/components/responsive_navigation"
     .universal.hero
