@@ -5,6 +5,6 @@
     .network-navigation-box.altai-center
       - networks.each do |network|
         .network-navigation-item
-          = link_to root_path, class: "link large", target: :blank do
+          = link_to network.url, class: "link large", target: :blank do
             .icon.left.mg-0
               = image_tag network.thumb_box_url.to_s
