@@ -2,33 +2,38 @@
 
 - cache "set-theme-#{object.slug}" do
   :coffee
-    # Button configuration
-    primaryButtonColor = [
-      "
-        background-color: #{object.try(:background_color_one)} !important;
-        border: 1px solid #{object.try(:background_color_one)} !important;
-        color: #{object.try(:hover_color_one)} !important;
-      "
-    ]
-    secondaryButtonColor = [
-      "
-        background-color: #{object.try(:background_color_two)} !important;
-        border: 1px solid #{object.try(:background_color_two)} !important;
-        color: #{object.try(:hover_color_two)} !important;
-      "
-    ]
-    # Button
-    $("a.set-theme-#{object.slug}").attr(
-      "style",
-      primaryButtonColor
-    )
-    $("a.set-theme-#{object.slug}").hover(->
-      $(this).attr(
-        "style",
-        secondaryButtonColor
-      )
-    ).mouseout ->
-      $(this).attr(
+    bindTemplate = ->
+      primaryButtonColor = [
+        "
+          background-color: #{object.try(:background_color_one)} !important;
+          border: 1px solid #{object.try(:background_color_one)} !important;
+          color: #{object.try(:hover_color_one)} !important;
+        "
+      ]
+      secondaryButtonColor = [
+        "
+          background-color: #{object.try(:background_color_two)} !important;
+          border: 1px solid #{object.try(:background_color_two)} !important;
+          color: #{object.try(:hover_color_two)} !important;
+        "
+      ]
+      # Button
+      $("a.set-theme-#{object.slug}").attr(
         "style",
         primaryButtonColor
       )
+      $("a.set-theme-#{object.slug}").hover(->
+        $(this).attr(
+          "style",
+          secondaryButtonColor
+        )
+      ).mouseout ->
+        $(this).attr(
+          "style",
+          primaryButtonColor
+        )
+      return
+    $(document).on 'turbolinks:load', ->
+      bindTemplate()
+      Turbolinks.clearCache()
+      return

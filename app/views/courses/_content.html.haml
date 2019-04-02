@@ -5,7 +5,7 @@
     .content-item
       - if object.title.presence
         %h1
-          - if object.icon_box_magestil.presence
+          - if object.icon_box.presence
             .icon.left
-              = image_tag object.icon_box_magestil_url.to_s
+              = image_tag object.icon_box_url.to_s
           = object.try(:title)
