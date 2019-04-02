@@ -27,4 +27,4 @@
               .icon.left
                 = image_tag "icons/video.png"
               Ver Vídeo
-        = render "theme", object: course
+        = render partial: "theme", locals: { object: course }
