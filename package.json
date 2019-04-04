@@ -7,7 +7,7 @@
     "altai_panel": "^1.0.4",
     "altai_toggle": "^1.0.20",
     "detect_swipe": "^2.1.4",
-    "jquery": "^3",
-    "js-cookie": "^2"
+    "js-cookie": "^2",
+    "jquery": "^3"
   }
 }
