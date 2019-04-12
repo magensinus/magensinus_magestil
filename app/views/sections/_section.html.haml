@@ -1,4 +1,14 @@
 %h3= @course_section.title
-.trix
-  - @course_section.section_assets.each do |asset|
-    = safe_join([asset.text_box.html_safe])
+.separator.extra-small
+- @course_section.section_assets.each do |asset|
+  - if asset.text == true
+    .trix
+      = safe_join([asset.text_box.html_safe])
+  - if asset.image == true
+    .section-content-asset
+      .media.auto.altai-center
+        = image_tag asset.image_box_url.to_s, class: "altai-center"
+  - if asset.video == true
+    .section-content-asset
+      .media.auto.altai-center
+        %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "306", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "544" }

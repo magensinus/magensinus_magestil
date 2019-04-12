@@ -17,8 +17,8 @@ class CoursesController < ApplicationController
 
   # /courses/slug
   def show
-    get_sections = @course.sections
-    @sections = get_sections.all
+    get_sections = @course.sections.where(published: true).order(position: :asc)
+    @sections = get_sections
     @section = get_sections.first! if get_sections.presence
     @assets = @section.section_assets.all if @section.presence
   end
