@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   # Journal articles
   def journal_articles
-    @journal_articles ||= Journal::Article.where(published: true, magestil: true).order(published_at: :asc)
+    @journal_articles ||= Journal::Article.where(published: true, magestil: true).order(created_at: :asc)
   end
 
   # Journal article
