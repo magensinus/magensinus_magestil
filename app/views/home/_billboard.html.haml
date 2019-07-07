@@ -9,7 +9,7 @@
         - if @object.description.presence
           .separator.extra-small
           %p.trix.white-cl.large
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
+            = safe_join([@object.description.html_safe])
 - else
   .billboard
     .billboard-box
@@ -19,4 +19,4 @@
         - if @object.description.presence
           .separator.extra-small
           %p.trix.white-cl.large
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
+            = safe_join([@object.description.html_safe])
