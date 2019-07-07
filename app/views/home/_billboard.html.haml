@@ -8,7 +8,7 @@
         %h1.white-cl.large= @object.title
         - if @object.description.presence
           .separator.extra-small
-          %p.trix.white-cl.large
+          .trix.white-cl.large
             = safe_join([@object.description.html_safe])
 - else
   .billboard
@@ -18,5 +18,5 @@
         %h1.white-cl.large= @object.title
         - if @object.description.presence
           .separator.extra-small
-          %p.trix.white-cl.large
+          .trix.white-cl.large
             = safe_join([@object.description.html_safe])
