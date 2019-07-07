@@ -1,0 +1,1 @@
+define(["../../core","../../core/isAttached"],function(s,t){"use strict";return function(e,n){return"none"===(e=n||e).style.display||""===e.style.display&&t(e)&&"none"===s.css(e,"display")}});
