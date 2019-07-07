@@ -1,0 +1,1 @@
+$.set_we_love_cookies=function(){var e;(e=$(".we_love_cookies"))[0]&&e.click(function(e){e.preventDefault(),Cookies.set("WeLoveCookies","Yummmmmmmmmy!",{expires:30}),location.reload()})};

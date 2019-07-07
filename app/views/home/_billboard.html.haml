@@ -8,8 +8,8 @@
         %h1.white-cl.large= @object.title
         - if @object.description.presence
           .separator.extra-small
-          .trix.white-cl.large
-            = safe_join([@object.description.html_safe])
+          %p.trix.white-cl.large
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
 - else
   .billboard
     .billboard-box
@@ -18,5 +18,5 @@
         %h1.white-cl.large= @object.title
         - if @object.description.presence
           .separator.extra-small
-          .trix.white-cl.large
-            = safe_join([@object.description.html_safe])
+          %p.trix.white-cl.large
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
