@@ -1,4 +1,4 @@
-/* Index */
+@/* Index */
 
 .container-top.left
   .breadcrumbs
@@ -21,7 +21,7 @@
       //     .trix
       //       = safe_join([@object.try(:description).html_safe])
       - @legal_articles.order(position: :desc).each do |article|
-        .content-item{ id: article.slug }
+        .content-item
           %h3= article.title
         - article.assets.each do |asset|
           - if asset.text == true

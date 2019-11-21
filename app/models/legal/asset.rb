@@ -11,6 +11,10 @@ module Legal
     # Relationships
     belongs_to :article, foreign_key: "legal_article_id", inverse_of: false
 
+    # Uploaders
+    # ---------
+    # Document
+    mount_uploader :document_box, Legal::DocumentUploader
     # Image
     mount_uploader :image_box, Legal::ImageUploader
   end

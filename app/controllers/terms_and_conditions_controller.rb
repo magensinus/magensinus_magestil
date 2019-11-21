@@ -6,9 +6,9 @@ class TermsAndConditionsController < ApplicationController
 
   # /terms_and_conditions
   def index
-    @legal_articles ||= Legal::Article.all
+    @legal_articles ||= Legal::Article.includes(:assets).all
   end
-
+  
   private
 
   # Object

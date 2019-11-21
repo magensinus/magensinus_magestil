@@ -49,10 +49,13 @@ module UrlHelper
   end
 
   # Fetch terms and conditions url's
+  # def fetch_terms_and_conditions_urls
+  #   [
+  #     { title: t("urls.terms_and_conditions"), url: terms_and_conditions_path, id: 0 }
+  #   ]
+  # end
   def fetch_terms_and_conditions_urls
-    [
-      { title: t("urls.terms_and_conditions"), url: terms_and_conditions_path, id: 0 }
-    ]
+    @legal_url ||= Legal::Article.where(published: true).all
   end
 
   # Active Link

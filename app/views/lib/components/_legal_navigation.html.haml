@@ -2,5 +2,6 @@
 
 .legal-navigation.altai-center
   .legal-navigation-box
-    .legal-navigation-item
-      = link_to "Termos & Condições", terms_and_conditions_path, class: "link white hover-underline"
+    - fetch_terms_and_conditions_urls.each do |url|
+      .legal-navigation-item
+        = link_to url.title, terms_and_conditions_path(anchor: url.slug), class: "link white hover-underline", id: "#{url.slug}"
