@@ -28,7 +28,7 @@ module ApplicationHelper
 
   # Endorsements
   def endorsements
-    @endorsements = Endorsement::Badge.all
+    @endorsements = Endorsement::Badge.order(position: :asc).all
   end
 
   # Fetch featured article
