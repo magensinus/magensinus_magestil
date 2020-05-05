@@ -32,3 +32,15 @@
 
 .link-blue-theme { @include link-blue-theme; }
 .link-blue-dark-theme { @include link-blue-dark-theme; }
+
+.billboard {
+  .billboard-box {
+    .billboard-item {
+      .trix {
+        a {
+          color: white !important;
+        }
+      }
+    }
+  }
+}

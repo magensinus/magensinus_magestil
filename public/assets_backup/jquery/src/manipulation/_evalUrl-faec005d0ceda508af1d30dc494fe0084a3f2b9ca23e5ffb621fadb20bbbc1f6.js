@@ -1,0 +1,1 @@
+define(["../ajax"],function(e){"use strict";return e._evalUrl=function(t,a){return e.ajax({url:t,type:"GET",dataType:"script",cache:!0,async:!1,global:!1,converters:{"text script":function(){}},dataFilter:function(t){e.globalEval(t,a)}})},e._evalUrl});
