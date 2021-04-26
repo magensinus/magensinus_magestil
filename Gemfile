@@ -3,6 +3,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 # Ruby version
 ruby "2.6.2"
 
@@ -59,7 +61,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "gibbon", github: "amro/gibbon"
 
 # Drop-in plug-in for ActionMailer to send emails via Postmark
-gem "postmark-rails", "~> 0.19"
+# gem "postmark-rails", "~> 0.19"
+gem 'postmark-rails', '~> 0.21.0'
 
 # Rack middleware for defining a canonical host name.
 gem "rack-canonical-host"
