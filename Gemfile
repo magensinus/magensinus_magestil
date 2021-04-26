@@ -52,7 +52,7 @@ gem "fog", "~> 1.42"
 gem "carrierwave", "~> 1.2"
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
-gem "mini_magick", "~> 4.8"
+gem "mini_magick", "~> 4.9"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
