@@ -8,6 +8,6 @@
     "altai_toggle": "^1.0.20",
     "detect_swipe": "^2.1.4",
     "js-cookie": "^2",
-    "jquery": "^3.4.0"
+    "jquery": "^3.5.0"
   }
 }
