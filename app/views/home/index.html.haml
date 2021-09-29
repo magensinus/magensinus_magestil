@@ -1,8 +1,9 @@
 /* Index */
 
-- if @object.presence
-  = render partial: "billboard"
-%main.universal.altai-panel
+.universal.hero
+  - if @object.presence
+    = render partial: "billboard"
+.universal.recent-news
   .universal-box
     .universal-item
       .container-middle.left
