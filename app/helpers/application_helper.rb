@@ -33,7 +33,7 @@ module ApplicationHelper
 
   # Recent articles
   def recent_articles
-    @recent_articles ||= Journal::Article.where(published: true, magestil: true).order(created_at: :desc).first(4)
+    @recent_articles ||= Journal::Article.where(published: true, magestil: true).order(created_at: :desc).first(8)
   end
 
   # Fetch featured article
