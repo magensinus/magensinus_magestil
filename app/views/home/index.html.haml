@@ -2,3 +2,23 @@
 
 - if @object.presence
   = render partial: "billboard"
+%main.universal.altai-panel
+  .universal-box
+    .universal-item
+      .container-middle.left
+        .content
+          .content-box
+            .content-item
+              %h3 Notícias Recentes
+        .articles
+          .articles-box
+            - recent_articles.each do |recent_article|
+              .articles-item
+                .articles-inner
+                  = image_tag recent_article.thumb_box_url
+                .separator.extra-small
+                = link_to article_path(recent_article), class: "blue" do
+                  .icon.left
+                    = image_tag "icons/underscore.png"
+                  = recent_article.title
+                  // = (recent_article.title).truncate(24)

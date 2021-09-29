@@ -31,6 +31,11 @@ module ApplicationHelper
     @endorsements = Endorsement::Badge.order(position: :asc).all
   end
 
+  # Recent articles
+  def recent_articles
+    @recent_articles ||= Journal::Article.where(published: true, magestil: true).order(created_at: :desc).first(4)
+  end
+
   # Fetch featured article
   def fetch_featured_article
     @fetch_featured_article = Journal::Article.where(featured: true, published: true, magestil: true).first
