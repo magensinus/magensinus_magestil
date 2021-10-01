@@ -1,0 +1,22 @@
+/* Billboard */
+
+- if @object.image_box.presence
+  .billboard{ style: "background-image: url(#{image_path @object.image_box_url.to_s})" }
+    .billboard-box
+      .billboard-item
+        .separator.medium
+        %h1.white-cl.large= @object.title
+        - if @object.description.presence
+          .separator.extra-small
+          .trix.white-cl.large
+            = safe_join([@object.description.html_safe])
+- else
+  .billboard
+    .billboard-box
+      .billboard-item
+        .separator.medium
+        %h1.white-cl.large= @object.title
+        - if @object.description.presence
+          .separator.extra-small
+          .trix.white-cl.large
+            = safe_join([@object.description.html_safe])
