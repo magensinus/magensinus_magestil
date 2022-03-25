@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :sections, only: [:index, :show], controller: :sections
   end
   resources :articles, only: [:index, :show], controller: :articles
+  resources :erasmus, only: [:index, :show], controller: :erasmus
   resources :contact, only: [:index], controller: :contact
   resources :students, only: [:index], controller: :students
   resources :parents, only: [:index], controller: :parents

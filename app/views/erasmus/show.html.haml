@@ -1,0 +1,50 @@
+/* Index */
+
+.container-top.left
+  / Breadcrumbs
+  .breadcrumbs
+    .breadcrumbs-box
+      .breadcrumbs-item
+        = link_to articles_path, class: "link small" do
+          .icon.left
+            = image_tag "icons/back.png"
+          = t("back")
+
+.container-middle.left
+  / Content
+  .content.col-large-4-3
+    .content-box
+      .content-item
+        - if @journal_article.title.presence
+          %h1= @journal_article.try(:title)
+        - if @journal_article.description.presence
+          .separator.small
+          .trix
+            = safe_join([@journal_article.try(:description).html_safe])
+    .content-box
+      - @journal_article.assets.order(position: :asc).each do |asset|
+        - if asset.text == true
+          .content-item
+            .trix
+              = safe_join([asset.text_box.html_safe])
+        - if asset.image == true
+          .content-item
+            .media.auto.altai-center
+              = image_tag asset.image_box_url.to_s, class: "altai-center"
+        - if asset.video == true
+          .content-item
+            .media.auto.altai-center
+              %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "369", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "656" }
+  .content.col-large-4-1
+    .content-box
+      .content-item
+        .articles-sidebar
+          %h4 Artigos Recentes
+          .articles-sidebar-box
+            - recent_journal_articles(@journal_article).each do |item|
+              .articles-sidebar-item
+                = link_to article_path(item), class: "link small blue" do
+                  .icon.left
+                    = image_tag "icons/underscore.png"
+                  = (item.title).truncate(24)
+.container-bottom.left

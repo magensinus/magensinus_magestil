@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ArticlesController < ApplicationController
+class ErasmusController < ApplicationController
   # Callbacks
   before_action :articles, only: [:index]
   before_action :journal_articles, only: [:index]
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   # Journal articles
   def journal_articles
-    @journal_articles ||= Journal::Article.where(published: true, magestil: true, erasmus: false).order(created_at: :desc)
+    @journal_articles ||= Journal::Article.where(published: true, magestil: true, erasmus: true).order(created_at: :desc)
   end
 
   # Journal article

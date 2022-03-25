@@ -26,7 +26,8 @@ module UrlHelper
     [
       { title: t("urls.students"),      url: students_path,       controller: "students",     id: 1 },
       { title: t("urls.parents"),       url: parents_path,        controller: "parents",      id: 2 },
-      { title: t("urls.tutors"),        url: tutors_path,         controller: "tutors",       id: 3 }
+      { title: t("urls.tutors"),        url: tutors_path,         controller: "tutors",       id: 3 },
+      { title: t("urls.erasmus"),       url: erasmus_path,        controller: "erasmus",      id: 4 }
     ]
   end
 
