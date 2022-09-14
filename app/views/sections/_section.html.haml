@@ -1,5 +1,6 @@
 %h3= @course_section.title
 .separator.extra-small
+
 - @course_section.section_assets.each do |asset|
   - if asset.text == true
     .trix
@@ -12,3 +13,13 @@
     .section-content-asset
       .media.auto.altai-center
         %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "306", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "544" }
+
+- if @course_section.title == "Tutors"
+  - @tutors.each do |tutor|
+    %h4
+      = tutor.tutor.name
+      = tutor.tutor.surname
+    .separator.extra-small
+    .trix
+      = tutor.tutor.biography.html_safe
+    .separator.small
