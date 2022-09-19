@@ -14,12 +14,19 @@
       .media.auto.altai-center
         %iframe#ytplayer{ allowfullscreen: "", frameborder: "0", height: "306", src: "https://www.youtube.com/embed/#{asset.video_box}", type: "text/html", width: "544" }
 
-- if @course_section.title == "Tutors"
-  - @tutors.each do |tutor|
-    %h4
-      = tutor.tutor.name
-      = tutor.tutor.surname
-    .separator.extra-small
-    .trix
-      = tutor.tutor.biography.html_safe
-    .separator.small
+- if @course_section.title == "Equipa Pedagógica"
+  .tutors
+    .tutors-box
+      - @tutors.each do |tutor|
+        .tutors-item
+          - if tutor.tutor.image_box.presence
+            = image_tag tutor.tutor.image_box_url.to_s, class: "float-left"
+          - else
+            = image_tag "/dummy_images/tutor.png", class: "float-left"
+          %h5
+            = tutor.tutor.name
+            = tutor.tutor.surname
+          // - if tutor.tutor.biography.presence
+          //   .separator.extra-small
+          //   .trix
+          //     = tutor.tutor.biography.html_safe
