@@ -1,0 +1,16 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// File:    Complaints
+// Project: Mies by IIGETHR
+// -------------------------------------------------------------
+
+$class: "complaints";
+
+.#{$class} {
+  float: left;
+  .#{$class}-box {
+    float: left;
+    .#{$class}-item {
+      float: left;
+    }
+  }
+}
