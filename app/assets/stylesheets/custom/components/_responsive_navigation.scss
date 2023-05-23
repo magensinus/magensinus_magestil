@@ -24,8 +24,8 @@ $class: "responsive-navigation";
 // -------------------------------------------------------------
 @media #{$double-extra-small} {
   .#{$class} {
-    // height: 512px !important;
-    // min-height: 512px !important;
+    height: 512px !important;
+    min-height: 512px !important;
     .#{$class}-box {
       .#{$class}-item {
       }
@@ -37,8 +37,8 @@ $class: "responsive-navigation";
 // ------------------------------------------------------------
 @media #{$extra-small} {
   .#{$class} {
-    // height: 512px !important;
-    // min-height: 512px !important;
+    height: 512px !important;
+    min-height: 512px !important;
     .#{$class}-box {
       .#{$class}-item {
       }
@@ -50,8 +50,8 @@ $class: "responsive-navigation";
 // -------------------------------------------------------------
 @media #{$small} {
   .#{$class} {
-    // height: 512px !important;
-    // min-height: 512px !important;
+    height: 512px !important;
+    min-height: 512px !important;
     .#{$class}-box {
       .#{$class}-item {
       }
