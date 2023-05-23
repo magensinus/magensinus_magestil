@@ -6,13 +6,54 @@
 $class: "responsive-navigation";
 
 .#{$class} {
-  height: auto;
+  height: 288px !important;
+  min-height: 288px !important;
   .#{$class}-box {
     .#{$class}-column {
     }
     .#{$class}-item {
       a {
         &.blue { @include link-blue-theme; }
+      }
+    }
+  }
+}
+
+
+// Media Query 240px
+// -------------------------------------------------------------
+@media #{$double-extra-small} {
+  .#{$class} {
+    height: 512px !important;
+    min-height: 512px !important;
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 360px
+// ------------------------------------------------------------
+@media #{$extra-small} {
+  .#{$class} {
+    height: 512px !important;
+    min-height: 512px !important;
+    .#{$class}-box {
+      .#{$class}-item {
+      }
+    }
+  }
+}
+
+// Media Query 480px
+// -------------------------------------------------------------
+@media #{$small} {
+  .#{$class} {
+    height: 512px !important;
+    min-height: 512px !important;
+    .#{$class}-box {
+      .#{$class}-item {
       }
     }
   }
