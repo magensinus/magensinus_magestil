@@ -6,7 +6,9 @@
       - wallet.assets.each do |asset|
         .wallets-item
           .wallets-inner
-            = link_to asset.document_box_url.to_s, target: :blank, class: "blue" do
+            = link_to asset.document_box_url.order(position: :asc).to_s, target: :blank, class: "blue" do
+              .wide
+                = asset.created_at
               .icon.left
                 = image_tag "icons/underscore.png"
               - if asset.document_caption.presence
