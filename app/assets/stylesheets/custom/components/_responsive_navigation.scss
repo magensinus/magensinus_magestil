@@ -6,6 +6,7 @@
 $class: "responsive-navigation";
 
 .#{$class} {
+  height: auto;
   .#{$class}-box {
     .#{$class}-column {
     }
